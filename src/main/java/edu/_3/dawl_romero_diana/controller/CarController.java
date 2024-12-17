@@ -63,7 +63,8 @@ public class CarController {
     @PutMapping("/update")
     public updateCarResponse updateCar(@RequestBody CarDto car){
         try{
-            if(carService.updateCar(car))
+            boolean c =carService.updateCar(car);
+            if(c)
                 return new updateCarResponse("01",null);
             else
                 return new updateCarResponse("02","update failed.");

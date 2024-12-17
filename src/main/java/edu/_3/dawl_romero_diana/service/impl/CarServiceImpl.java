@@ -62,6 +62,7 @@ public class CarServiceImpl implements CarService {
             ca.setLicensePlate(car.licensePlate());
             ca.setOwnerName(car.ownerName());
             ca.setColor(car.color());
+            carRepository.save(ca);
             return true;
         }).orElse(false);
     }
@@ -79,6 +80,7 @@ public class CarServiceImpl implements CarService {
         car.setEngineType(carDto.engineType());
         car.setColor(carDto.color());
         car.setInsuranceCompany(carDto.insuranceCompany());
+        carRepository.save(car);
         return true;
     }
 
